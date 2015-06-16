@@ -35,5 +35,19 @@ namespace Practica1_IPC2
             
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 consulta = new Form4();
+            consulta.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form5 pres = new Form5();
+            pres.Show();
+
+        }
+
     }
 }

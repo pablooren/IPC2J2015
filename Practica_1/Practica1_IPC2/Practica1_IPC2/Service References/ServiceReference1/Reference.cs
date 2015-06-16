@@ -22,6 +22,18 @@ namespace Practica1_IPC2.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/conectarServidor", ReplyAction="*")]
         bool conectarServidor();
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Consulta_ClientesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta_Clientes", ReplyAction="*")]
+        Practica1_IPC2.ServiceReference1.Consulta_ClientesResponse Consulta_Clientes(Practica1_IPC2.ServiceReference1.Consulta_ClientesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento libro del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta_Libros", ReplyAction="*")]
+        Practica1_IPC2.ServiceReference1.Consulta_LibrosResponse Consulta_Libros(Practica1_IPC2.ServiceReference1.Consulta_LibrosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Cargar_librosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Cargar_libros", ReplyAction="*")]
+        Practica1_IPC2.ServiceReference1.Cargar_librosResponse Cargar_libros(Practica1_IPC2.ServiceReference1.Cargar_librosRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Registrar", ReplyAction="*")]
         Practica1_IPC2.ServiceReference1.RegistrarResponse Registrar(Practica1_IPC2.ServiceReference1.RegistrarRequest request);
@@ -85,6 +97,196 @@ namespace Practica1_IPC2.ServiceReference1 {
         
         public HelloWorldResponseBody(string HelloWorldResult) {
             this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta_ClientesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta_Clientes", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Consulta_ClientesRequestBody Body;
+        
+        public Consulta_ClientesRequest() {
+        }
+        
+        public Consulta_ClientesRequest(Practica1_IPC2.ServiceReference1.Consulta_ClientesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class Consulta_ClientesRequestBody {
+        
+        public Consulta_ClientesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta_ClientesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta_ClientesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Consulta_ClientesResponseBody Body;
+        
+        public Consulta_ClientesResponse() {
+        }
+        
+        public Consulta_ClientesResponse(Practica1_IPC2.ServiceReference1.Consulta_ClientesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Consulta_ClientesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Consulta_ClientesResult;
+        
+        public Consulta_ClientesResponseBody() {
+        }
+        
+        public Consulta_ClientesResponseBody(string Consulta_ClientesResult) {
+            this.Consulta_ClientesResult = Consulta_ClientesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta_LibrosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta_Libros", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Consulta_LibrosRequestBody Body;
+        
+        public Consulta_LibrosRequest() {
+        }
+        
+        public Consulta_LibrosRequest(Practica1_IPC2.ServiceReference1.Consulta_LibrosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Consulta_LibrosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string libro;
+        
+        public Consulta_LibrosRequestBody() {
+        }
+        
+        public Consulta_LibrosRequestBody(string libro) {
+            this.libro = libro;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta_LibrosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta_LibrosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Consulta_LibrosResponseBody Body;
+        
+        public Consulta_LibrosResponse() {
+        }
+        
+        public Consulta_LibrosResponse(Practica1_IPC2.ServiceReference1.Consulta_LibrosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Consulta_LibrosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Consulta_LibrosResult;
+        
+        public Consulta_LibrosResponseBody() {
+        }
+        
+        public Consulta_LibrosResponseBody(string Consulta_LibrosResult) {
+            this.Consulta_LibrosResult = Consulta_LibrosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Cargar_librosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Cargar_libros", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Cargar_librosRequestBody Body;
+        
+        public Cargar_librosRequest() {
+        }
+        
+        public Cargar_librosRequest(Practica1_IPC2.ServiceReference1.Cargar_librosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class Cargar_librosRequestBody {
+        
+        public Cargar_librosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Cargar_librosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Cargar_librosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Practica1_IPC2.ServiceReference1.Cargar_librosResponseBody Body;
+        
+        public Cargar_librosResponse() {
+        }
+        
+        public Cargar_librosResponse(Practica1_IPC2.ServiceReference1.Cargar_librosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Cargar_librosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Cargar_librosResult;
+        
+        public Cargar_librosResponseBody() {
+        }
+        
+        public Cargar_librosResponseBody(string Cargar_librosResult) {
+            this.Cargar_librosResult = Cargar_librosResult;
         }
     }
     
@@ -205,6 +407,43 @@ namespace Practica1_IPC2.ServiceReference1 {
         
         public bool conectarServidor() {
             return base.Channel.conectarServidor();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Practica1_IPC2.ServiceReference1.Consulta_ClientesResponse Practica1_IPC2.ServiceReference1.ServiceSoap.Consulta_Clientes(Practica1_IPC2.ServiceReference1.Consulta_ClientesRequest request) {
+            return base.Channel.Consulta_Clientes(request);
+        }
+        
+        public string Consulta_Clientes() {
+            Practica1_IPC2.ServiceReference1.Consulta_ClientesRequest inValue = new Practica1_IPC2.ServiceReference1.Consulta_ClientesRequest();
+            inValue.Body = new Practica1_IPC2.ServiceReference1.Consulta_ClientesRequestBody();
+            Practica1_IPC2.ServiceReference1.Consulta_ClientesResponse retVal = ((Practica1_IPC2.ServiceReference1.ServiceSoap)(this)).Consulta_Clientes(inValue);
+            return retVal.Body.Consulta_ClientesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Practica1_IPC2.ServiceReference1.Consulta_LibrosResponse Practica1_IPC2.ServiceReference1.ServiceSoap.Consulta_Libros(Practica1_IPC2.ServiceReference1.Consulta_LibrosRequest request) {
+            return base.Channel.Consulta_Libros(request);
+        }
+        
+        public string Consulta_Libros(string libro) {
+            Practica1_IPC2.ServiceReference1.Consulta_LibrosRequest inValue = new Practica1_IPC2.ServiceReference1.Consulta_LibrosRequest();
+            inValue.Body = new Practica1_IPC2.ServiceReference1.Consulta_LibrosRequestBody();
+            inValue.Body.libro = libro;
+            Practica1_IPC2.ServiceReference1.Consulta_LibrosResponse retVal = ((Practica1_IPC2.ServiceReference1.ServiceSoap)(this)).Consulta_Libros(inValue);
+            return retVal.Body.Consulta_LibrosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Practica1_IPC2.ServiceReference1.Cargar_librosResponse Practica1_IPC2.ServiceReference1.ServiceSoap.Cargar_libros(Practica1_IPC2.ServiceReference1.Cargar_librosRequest request) {
+            return base.Channel.Cargar_libros(request);
+        }
+        
+        public string Cargar_libros() {
+            Practica1_IPC2.ServiceReference1.Cargar_librosRequest inValue = new Practica1_IPC2.ServiceReference1.Cargar_librosRequest();
+            inValue.Body = new Practica1_IPC2.ServiceReference1.Cargar_librosRequestBody();
+            Practica1_IPC2.ServiceReference1.Cargar_librosResponse retVal = ((Practica1_IPC2.ServiceReference1.ServiceSoap)(this)).Cargar_libros(inValue);
+            return retVal.Body.Cargar_librosResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

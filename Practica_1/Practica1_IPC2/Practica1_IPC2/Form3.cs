@@ -28,6 +28,7 @@ namespace Practica1_IPC2
             if (conexion.Registrar(tabla, columnas, valores))
             {
                 MessageBox.Show("Libro  creado");
+                this.Close();
                 
             }
         }

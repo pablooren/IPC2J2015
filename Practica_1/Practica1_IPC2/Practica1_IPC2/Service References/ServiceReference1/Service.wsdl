@@ -22,6 +22,40 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Consulta_Clientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="Consulta_ClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Consulta_ClientesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Consulta_Libros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Consulta_LibrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Consulta_LibrosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cargar_libros">
+        <s:complexType />
+      </s:element>
+      <s:element name="Cargar_librosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cargar_librosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Registrar">
         <s:complexType>
           <s:sequence>
@@ -52,6 +86,24 @@
   <wsdl:message name="conectarServidorSoapOut">
     <wsdl:part name="parameters" element="tns:conectarServidorResponse" />
   </wsdl:message>
+  <wsdl:message name="Consulta_ClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:Consulta_Clientes" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:Consulta_ClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_LibrosSoapIn">
+    <wsdl:part name="parameters" element="tns:Consulta_Libros" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_LibrosSoapOut">
+    <wsdl:part name="parameters" element="tns:Consulta_LibrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cargar_librosSoapIn">
+    <wsdl:part name="parameters" element="tns:Cargar_libros" />
+  </wsdl:message>
+  <wsdl:message name="Cargar_librosSoapOut">
+    <wsdl:part name="parameters" element="tns:Cargar_librosResponse" />
+  </wsdl:message>
   <wsdl:message name="RegistrarSoapIn">
     <wsdl:part name="parameters" element="tns:Registrar" />
   </wsdl:message>
@@ -66,6 +118,18 @@
     <wsdl:operation name="conectarServidor">
       <wsdl:input message="tns:conectarServidorSoapIn" />
       <wsdl:output message="tns:conectarServidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Clientes">
+      <wsdl:input message="tns:Consulta_ClientesSoapIn" />
+      <wsdl:output message="tns:Consulta_ClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Libros">
+      <wsdl:input message="tns:Consulta_LibrosSoapIn" />
+      <wsdl:output message="tns:Consulta_LibrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cargar_libros">
+      <wsdl:input message="tns:Cargar_librosSoapIn" />
+      <wsdl:output message="tns:Cargar_librosSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Registrar">
       <wsdl:input message="tns:RegistrarSoapIn" />
@@ -85,6 +149,33 @@
     </wsdl:operation>
     <wsdl:operation name="conectarServidor">
       <soap:operation soapAction="http://tempuri.org/conectarServidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Clientes">
+      <soap:operation soapAction="http://tempuri.org/Consulta_Clientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Libros">
+      <soap:operation soapAction="http://tempuri.org/Consulta_Libros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cargar_libros">
+      <soap:operation soapAction="http://tempuri.org/Cargar_libros" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -115,6 +206,33 @@
     </wsdl:operation>
     <wsdl:operation name="conectarServidor">
       <soap12:operation soapAction="http://tempuri.org/conectarServidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Clientes">
+      <soap12:operation soapAction="http://tempuri.org/Consulta_Clientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta_Libros">
+      <soap12:operation soapAction="http://tempuri.org/Consulta_Libros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cargar_libros">
+      <soap12:operation soapAction="http://tempuri.org/Cargar_libros" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

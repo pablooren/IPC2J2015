@@ -57,6 +57,69 @@ public class Service : System.Web.Services.WebService
         return respuesta;
     }
     [WebMethod]
+    public string Consulta_Clientes()
+    {
+        String carga = "";
+        SqlCommand com = new SqlCommand();
+        com.Connection = conexion;
+        com.CommandText = "SELECT	c.Carnet FROM Cliente c";
+        conectarServidor();
+        SqlDataReader reader = com.ExecuteReader();
+        while (reader.Read())
+        {
+            carga = carga + reader.GetInt32(0).ToString() + '/';
+
+        }
+        conexion.Close();
+        return carga;
+    }
+    [WebMethod]
+    public String Consulta_Libros(String libro) {
+        String res = "";
+      //  int res = 0;
+        String lb = libro.ToString();
+        try
+        {
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = "SELECT  l.Nombre,l.Autor, l.Num_existencia,l.Disponible,l.Prestados,l.Reservados FROM Libro l WHERE l.Cod_Libro =" + lb;
+            conectarServidor();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+             
+                   res = reader.GetString(0)+ '/';
+                res = res + reader.GetString(1)+ '/';
+                res = res + reader.GetInt32(2)+ '/';
+                res = res + reader.GetInt32(3)+ '/';
+                res = res + reader.GetInt32(4)+ '/';
+                res = res + reader.GetInt32(5)+ '/';
+
+            }
+
+        }
+        catch (Exception e) { 
+        }
+        conexion.Close();
+        return res;
+
+    }
+    [WebMethod]
+    public String Cargar_libros() { 
+    String carga = "";
+    SqlCommand com = new SqlCommand();
+    com.Connection = conexion;
+        com.CommandText = "SELECT l.Cod_Libro FROM Libro l";
+        conectarServidor();
+        SqlDataReader reader = com.ExecuteReader();
+        while (reader.Read()) {
+            carga = carga + reader.GetInt32(0).ToString()+ '/' ;
+
+        }
+        conexion.Close();
+    return carga;
+    }
+    [WebMethod]
     public bool Registrar(string Tabla, string Campos, string Valores)
     {
         bool respuesta = false;

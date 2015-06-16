@@ -14,7 +14,7 @@ namespace Practica1_IPC2
        private String tabla = "";
        private String columnas = "";
        private String valores = "";
-        ServiceReference1.ServiceSoapClient conexion = new ServiceReference1.ServiceSoapClient(); 
+      private  ServiceReference1.ServiceSoapClient conexion = new ServiceReference1.ServiceSoapClient(); 
         public Form2()
         {
             InitializeComponent();
