@@ -31,8 +31,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/INICIO.aspx">Inicio</a></li>
-                        <li><a runat="server" href="~/registro_usuario.aspx">Nuevo cliente</a></li> 
+                         
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -51,12 +50,27 @@
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
             </div>
         </div>
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
                 &nbsp;<br />
+                 
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                  
             <br />
             <hr />

@@ -148,7 +148,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="INICIO.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -158,6 +157,12 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Administrador.aspx" />
+    <Content Include="Confirmacion_usuario.aspx" />
+    <Content Include="Consulta_empleados.aspx" />
+    <Content Include="Contratos.aspx" />
+    <Content Include="Director.aspx" />
+    <Content Include="logeado.aspx" />
     <Content Include="registro_usuario.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -169,16 +174,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.LoginResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.IngresarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Empleados.master" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Service References\ServiceReference1\WebService1.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
@@ -299,7 +296,43 @@
     <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Carga_masiva.cs" />
+    <Compile Include="Confirmacion_usuario.aspx.cs">
+      <DependentUpon>Confirmacion_usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmacion_usuario.aspx.designer.cs">
+      <DependentUpon>Confirmacion_usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_empleados.aspx.cs">
+      <DependentUpon>Consulta_empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_empleados.aspx.designer.cs">
+      <DependentUpon>Consulta_empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contratos.aspx.cs">
+      <DependentUpon>Contratos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contratos.aspx.designer.cs">
+      <DependentUpon>Contratos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Director.aspx.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director.aspx.designer.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empleados.master.cs">
       <DependentUpon>Empleados.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,16 +340,16 @@
     <Compile Include="Empleados.master.designer.cs">
       <DependentUpon>Empleados.master</DependentUpon>
     </Compile>
-    <Compile Include="INICIO.aspx.cs">
-      <DependentUpon>INICIO.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="INICIO.aspx.designer.cs">
-      <DependentUpon>INICIO.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="logeado.aspx.cs">
+      <DependentUpon>logeado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logeado.aspx.designer.cs">
+      <DependentUpon>logeado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="registro_usuario.aspx.cs">
       <DependentUpon>registro_usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

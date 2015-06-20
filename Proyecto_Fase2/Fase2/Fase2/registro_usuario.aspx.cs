@@ -10,11 +10,11 @@ namespace Fase2
     public partial class Contact : Page
     {
         private ServiceReference1.WebService1SoapClient referencia = new ServiceReference1.WebService1SoapClient(); 
-       
+        
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            //    boton_usuario.Enabled = false;
+            //  boton_usuario.Enabled = false;
             
         }
 
