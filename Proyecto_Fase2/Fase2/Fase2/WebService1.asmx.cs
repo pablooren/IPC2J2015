@@ -25,20 +25,32 @@ namespace Fase2
         public string MostrarEstado;
         public string MostrarError;
       
+        
         [WebMethod]
-        public System.Data.DataTable datos(String valor)
-        {
+        public bool Gestion_EnvioE(String fecha, String destino) {
+            bool ret = false;
             SqlCommand com = new SqlCommand();
             com.Connection = conexion;
-            SqlCommand query = new SqlCommand("Listado", conexion);
-            query.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "Enable Trigger EnvioLot ON Lote Insert Lote(fecha_salida,estado,destino) values ( '" + fecha + "','Enviado'," + destino + ") ";
             conectarServidor();
-            query.Parameters.Add("@depto", SqlDbType.Int, 4);
-            query.Parameters["@depto"].Value = valor;
-         SqlDataAdapter   adaptador = new SqlDataAdapter(query);
-         DataTable tabla = new DataTable();
-         adaptador.Fill(tabla);
-         return tabla;
+            if (conectarServidor())
+            {
+
+                ret = true;
+                if (com.ExecuteNonQuery() != 0){
+                    ret = true;
+                }
+                else{
+                    ret = false;
+            }
+            }
+            else
+            {
+                ret = false;
+            }
+          
+            return ret;
+
         }
         [WebMethod]
         public string Consulta1(String tabla, String columna, String valor, String get) {
@@ -61,9 +73,9 @@ namespace Fase2
             return aux1;
         }
         [WebMethod]
-        public int Login(String usuario , String contraseña, String Rol)
+        public bool Login(String usuario , String contraseña, String Rol)
         {
-            int carga = 0;
+            bool carga = false;
             try{
                  
             
@@ -74,7 +86,7 @@ namespace Fase2
                 com.CommandText = "SELECT p.Departamento FROM Planilla p WHERE p.Contraseña ='" + contraseña + "' AND p.Nombre_usuario='" + usuario + "' AND p.Cargo = '"+Rol + "'";
                 
             }
-            else if (Rol == "usuario") {
+            else if (Rol == "Cliente") {
                 com.CommandText = "SELECT c.Contraseña FROM Cliente c WHERE c.Contraseña='" + contraseña + "' AND c.Nombre_usuario='" + usuario + "' AND c.Cas_Int IS NOT NULL";
             }
 
@@ -86,44 +98,44 @@ namespace Fase2
 
                 if (Rol == "Administrador")
                 {
-                    carga= 1;
+                    carga= true;
                 }
                 else if (Rol == "Director")
                 {
                     if (reader.GetInt32(0) == 1) {
-                        carga= 2;
+                        carga= true;
 
                     }
                     else if (reader.GetInt32(0) == 2)
                     {
-                        carga= 3;
+                        carga= true;
                     }
                     else if (reader.GetInt32(0) == 3)
                     {
-                        carga= 4;
+                        carga= true;
                     }
                 }
                 else if (Rol == "Empleado")
                 {
                     if (reader.GetInt32(0) == 1)
                     {
-                        carga= 5;
+                        carga= true;
                     }
                     else if (reader.GetInt32(0) == 2)
                     {
-                        carga= 6;
+                        carga= true;
                     }
                     else if (reader.GetInt32(0) == 3)
                     {
-                        carga= 7;
+                        carga= true;
                     }
                 }
                 else if (Rol == "Cliente")
                 {
-                    carga =8;
+                    carga =true;
                 }
                 else
-                    carga= 0;
+                    carga= false;
 
             }
             conexion.Close();
@@ -136,8 +148,8 @@ namespace Fase2
        {
            bool cumplido = false;
            string res = "";
-           try
-           {
+       //    try
+         //  {
                SqlCommand cm = new SqlCommand();
                cm.Connection = conexion;
                cm.CommandText = "UPDATE " + tabla +" SET "+columna+" = "+valor+" WHERE "+ restriccion1+" = "+restriccion2 ;
@@ -146,7 +158,7 @@ namespace Fase2
 
                if (conectarServidor())
                {
-                   if (cm.ExecuteNonQuery() == 1)
+                   if (cm.ExecuteNonQuery() != 0)
                        cumplido = true;
                    else
                        cumplido = false;
@@ -157,31 +169,30 @@ namespace Fase2
                    cumplido = false;
                }
 
-           }
-           catch (Exception e)
-           {
+         //  }
+          // catch (Exception e)
+          // {
 
 
 
-           }
+          // }
            return cumplido;
        }
        [WebMethod]
        public bool Ingresar(String Tabla, String columnas, String valores) {
-           bool cumplido = false;
-            try
+           bool cumplido = true;
+           try
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "INSERT INTO " + Tabla + "(" + columnas + ") VALUES (" + valores + ");";
+            cm.CommandText = "INSERT INTO " + Tabla + "( " + columnas + " ) VALUES ( " + valores + " );";
             conectarServidor();
 
             if (conectarServidor())
             {
-                if (cm.ExecuteNonQuery() == 1)
-                    cumplido = true;
-                else
+                if (cm.ExecuteNonQuery() == 0) {
                     cumplido = false;
+                }
 
             }
             else
@@ -190,11 +201,11 @@ namespace Fase2
             }
 
         }
-        catch (Exception e)
-        {
-            cumplido = false;
+       catch (Exception e)
+       {
+           cumplido = false;
             //MostrarError = "Erro: " + e.Message.ToString();
-        }
+       }
        
             conexion.Close();
        

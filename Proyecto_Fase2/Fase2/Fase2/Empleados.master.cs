@@ -18,16 +18,12 @@ namespace Fase2
 
             logeado lo = new logeado();
             nom.Text = lo.user();
-            if (referencia.Consulta1("Planilla", "Departamento", "Nombre_usuario", "'"+nom.Text+"'") == "1") {
-                depto.Text = "Servicio_cliente";
-            }
-            else if (referencia.Consulta1("Planilla", "Departamento", "Nombre_usuario","'"+ nom.Text+"'") == "2") {
-                depto.Text = "Paqueteria";
-            }
-            else if (referencia.Consulta1("Planilla", "Departamento", "Nombre_usuario", "'"+nom.Text+"'") == "3") {
-                depto.Text = "Bodega";
-            }
-            
+            depto.Text = referencia.Consulta1("Planilla p, Registro r , Departamento d	", "d.Nombre", "d.Serie_dept = r.depto_id AND p.Departamento = r.no_registro AND p.Nombre_usuario", "'" + nom.Text + "'");
+            suc.Text = referencia.Consulta1("Planilla p, Registro r , Sucursal s", "s.Direccion", "s.Serie_Suc = r.sede_id AND p.Departamento = r.no_registro AND p.Nombre_usuario", "'" + nom.Text + "'");
+            pais.Text = referencia.Consulta1("Planilla p, Registro r , Sucursal s", "s.Pais", "s.Serie_Suc = r.sede_id AND p.Departamento = r.no_registro AND p.Nombre_usuario", "'" + nom.Text + "'");
+       //     depto.Text = referencia.Consulta1("Planilla p , Registro r , Departamento d", "d.Nombre", " p.Departamento = r.no_registro AND d.Serie_dept = r.depto_id AND p.Nombre_usuario", "'" + nom.Text + "'");
+       //     suc.Text = referencia.Consulta1("Planilla p , Registro r , Departamento d, Sucursal s", "s.Direccion", "p.Departamento = r.no_registro AND d.Serie_dept = r.depto_id AND S.Serie_Suc = R.sede_id AND p.Nombre_usuario", "'" + nom.Text + "'");
+        //    pais.Text = referencia.Consulta1("Planilla p , Registro r , Departamento d, Sucursal s", "s.Pais", "p.Departamento = r.no_registro AND d.Serie_dept = r.depto_id AND S.Serie_Suc = R.sede_id AND p.Nombre_usuario", "'" + nom.Text + "'");
 
 
         }

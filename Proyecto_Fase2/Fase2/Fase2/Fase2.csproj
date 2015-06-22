@@ -158,11 +158,20 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Administrador.aspx" />
+    <Content Include="Clientes.aspx" />
     <Content Include="Confirmacion_usuario.aspx" />
     <Content Include="Consulta_empleados.aspx" />
+    <Content Include="Consulta_paquete.aspx" />
     <Content Include="Contratos.aspx" />
+    <Content Include="Cotizacion.aspx" />
     <Content Include="Director.aspx" />
+    <Content Include="Editar_cliente.aspx" />
+    <Content Include="EstadoLote.aspx" />
     <Content Include="logeado.aspx" />
+    <Content Include="Lote.aspx" />
+    <Content Include="ModificarContrato.aspx" />
+    <Content Include="Paqueteria.aspx" />
+    <Content Include="RegistroPaquete.aspx" />
     <Content Include="registro_usuario.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -176,6 +185,31 @@
     <Content Include="Account\Web.config" />
     <Content Include="Empleados.master" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.ArrayOfAnyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.Consulta1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.ConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.Gestion_EnvioEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.IngresarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="ClienteM.master" />
     <None Include="Service References\ServiceReference1\WebService1.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
@@ -183,6 +217,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Servicio al cliente.aspx" />
+    <Content Include="servicio_paquete.aspx" />
     <Content Include="WebService1.asmx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -305,6 +341,20 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Carga_masiva.cs" />
+    <Compile Include="ClienteM.master.cs">
+      <DependentUpon>ClienteM.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteM.master.designer.cs">
+      <DependentUpon>ClienteM.master</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Confirmacion_usuario.aspx.cs">
       <DependentUpon>Confirmacion_usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,6 +369,13 @@
     <Compile Include="Consulta_empleados.aspx.designer.cs">
       <DependentUpon>Consulta_empleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consulta_paquete.aspx.cs">
+      <DependentUpon>Consulta_paquete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_paquete.aspx.designer.cs">
+      <DependentUpon>Consulta_paquete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contratos.aspx.cs">
       <DependentUpon>Contratos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,12 +383,26 @@
     <Compile Include="Contratos.aspx.designer.cs">
       <DependentUpon>Contratos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Cotizacion.aspx.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizacion.aspx.designer.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Director.aspx.cs">
       <DependentUpon>Director.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Director.aspx.designer.cs">
       <DependentUpon>Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_cliente.aspx.cs">
+      <DependentUpon>Editar_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editar_cliente.aspx.designer.cs">
+      <DependentUpon>Editar_cliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados.master.cs">
       <DependentUpon>Empleados.master</DependentUpon>
@@ -343,12 +414,47 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="EstadoLote.aspx.cs">
+      <DependentUpon>EstadoLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoLote.aspx.designer.cs">
+      <DependentUpon>EstadoLote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="logeado.aspx.cs">
       <DependentUpon>logeado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="logeado.aspx.designer.cs">
       <DependentUpon>logeado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lote.aspx.cs">
+      <DependentUpon>Lote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lote.aspx.designer.cs">
+      <DependentUpon>Lote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarContrato.aspx.cs">
+      <DependentUpon>ModificarContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarContrato.aspx.designer.cs">
+      <DependentUpon>ModificarContrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paqueteria.aspx.cs">
+      <DependentUpon>Paqueteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paqueteria.aspx.designer.cs">
+      <DependentUpon>Paqueteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroPaquete.aspx.cs">
+      <DependentUpon>RegistroPaquete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroPaquete.aspx.designer.cs">
+      <DependentUpon>RegistroPaquete.aspx</DependentUpon>
     </Compile>
     <Compile Include="registro_usuario.aspx.cs">
       <DependentUpon>registro_usuario.aspx</DependentUpon>
@@ -373,6 +479,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio al cliente.aspx.cs">
+      <DependentUpon>Servicio al cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Servicio al cliente.aspx.designer.cs">
+      <DependentUpon>Servicio al cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servicio_paquete.aspx.cs">
+      <DependentUpon>servicio_paquete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicio_paquete.aspx.designer.cs">
+      <DependentUpon>servicio_paquete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

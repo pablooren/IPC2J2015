@@ -18,15 +18,14 @@ namespace Fase2
         }
         protected bool Login_autenticacion()
         {
-            int autenticado = 0;
+            bool autenticado = false;
             bool aux = false;
             autenticado = referencia.Login(usuario.Text, password.Text, grupo.SelectedItem.ToString());
 
-            if (autenticado != 0)
+            if (autenticado == true)
             {
              //   Response.Redirect("google.com.gt"); // aqui para confirmar el login
                 usuario1 = usuario.Text;
-                rol = autenticado;
                 aux = true;
             }
             else
@@ -43,24 +42,31 @@ namespace Fase2
             {
 
 
-                if (rol == 1)
+                if (grupo.SelectedItem.Text == "Administrador")
                 {
                     Response.Redirect("Administrador.aspx");
                 }
-                else if (rol == 2 || rol == 3 || rol == 4)
+                else if (grupo.SelectedItem.Text == "Director")
                 {
                     Response.Redirect("Director.aspx");
                 }
-                else if (rol == 5 || rol == 6 || rol == 7)
+                else if (grupo.SelectedItem.Text == "Empleado")
                 {
-                    Response.Redirect("empleado");
+             String aux45 =   referencia.Consulta1("Planilla p, Registro r , Departamento d	", "d.Nombre", "d.Serie_dept = r.depto_id AND p.Departamento = r.no_registro AND p.Nombre_usuario ","'"+ usuario.Text+"'");
+             if (aux45 == "Servicio_cliente") {
+                 Response.Redirect("Servicio al cliente.aspx");
+             }
+             else if (aux45 == "Bodega") { Response.Redirect("Bodega"); }
+             else if (aux45 == "Paqueteria") { Response.Redirect("Paqueteria.aspx"); } else { MessageBox.Show("Hubo un error porfavor verifica"); }
+
                 }
-                else if (rol == 9)
+                else if (grupo.SelectedItem.Text == "Cliente")
                 {
-                    Response.Redirect("usuario");
+                    Response.Redirect("Clientes.aspx");
                 }
                 else
                 {
+                    MessageBox.Show("Usuario no valido");
                     Response.Redirect("logeado.aspx");
                 }
 

@@ -9,69 +9,604 @@
 //------------------------------------------------------------------------------
 
 namespace Fase2.ServiceReference1 {
-    using System.Data;
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfAnyType", Namespace="http://tempuri.org/", ItemName="anyType")]
+    [System.SerializableAttribute()]
+    public class ArrayOfAnyType : System.Collections.Generic.List<object> {
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/datos", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataTable datos(string valor);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento fecha del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Gestion_EnvioE", ReplyAction="*")]
+        Fase2.ServiceReference1.Gestion_EnvioEResponse Gestion_EnvioE(Fase2.ServiceReference1.Gestion_EnvioERequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/datos", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataTable> datosAsync(string valor);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Gestion_EnvioE", ReplyAction="*")]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.Gestion_EnvioEResponse> Gestion_EnvioEAsync(Fase2.ServiceReference1.Gestion_EnvioERequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta1", ReplyAction="*")]
+        Fase2.ServiceReference1.Consulta1Response Consulta1(Fase2.ServiceReference1.Consulta1Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta1", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Consulta1(string tabla, string columna, string valor, string get);
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.Consulta1Response> Consulta1Async(Fase2.ServiceReference1.Consulta1Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta1", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> Consulta1Async(string tabla, string columna, string valor, string get);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
+        Fase2.ServiceReference1.LoginResponse Login(Fase2.ServiceReference1.LoginRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int Login(string usuario, string contraseña, string Rol);
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.LoginResponse> LoginAsync(Fase2.ServiceReference1.LoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contraseña, string Rol);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
+        Fase2.ServiceReference1.UpdateResponse Update(Fase2.ServiceReference1.UpdateRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update(string tabla, string columna, string valor, string restriccion1, string restriccion2);
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.UpdateResponse> UpdateAsync(Fase2.ServiceReference1.UpdateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> UpdateAsync(string tabla, string columna, string valor, string restriccion1, string restriccion2);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Ingresar", ReplyAction="*")]
+        Fase2.ServiceReference1.IngresarResponse Ingresar(Fase2.ServiceReference1.IngresarRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Ingresar", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Ingresar(string Tabla, string columnas, string valores);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Ingresar", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> IngresarAsync(string Tabla, string columnas, string valores);
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.IngresarResponse> IngresarAsync(Fase2.ServiceReference1.IngresarRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/conectarServidor", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         bool conectarServidor();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/conectarServidor", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> conectarServidorAsync();
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento HelloWorldResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string HelloWorld();
+        Fase2.ServiceReference1.HelloWorldResponse HelloWorld(Fase2.ServiceReference1.HelloWorldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.HelloWorldResponse> HelloWorldAsync(Fase2.ServiceReference1.HelloWorldRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tablas del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta", ReplyAction="*")]
+        Fase2.ServiceReference1.ConsultaResponse Consulta(Fase2.ServiceReference1.ConsultaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] Consulta(string tablas, string columnas, string llaves, string get);
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.ConsultaResponse> ConsultaAsync(Fase2.ServiceReference1.ConsultaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Gestion_EnvioERequest {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta", ReplyAction="*")]
-        System.Threading.Tasks.Task<object[]> ConsultaAsync(string tablas, string columnas, string llaves, string get);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Gestion_EnvioE", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.Gestion_EnvioERequestBody Body;
+        
+        public Gestion_EnvioERequest() {
+        }
+        
+        public Gestion_EnvioERequest(Fase2.ServiceReference1.Gestion_EnvioERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Gestion_EnvioERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string fecha;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string destino;
+        
+        public Gestion_EnvioERequestBody() {
+        }
+        
+        public Gestion_EnvioERequestBody(string fecha, string destino) {
+            this.fecha = fecha;
+            this.destino = destino;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Gestion_EnvioEResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Gestion_EnvioEResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.Gestion_EnvioEResponseBody Body;
+        
+        public Gestion_EnvioEResponse() {
+        }
+        
+        public Gestion_EnvioEResponse(Fase2.ServiceReference1.Gestion_EnvioEResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Gestion_EnvioEResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool Gestion_EnvioEResult;
+        
+        public Gestion_EnvioEResponseBody() {
+        }
+        
+        public Gestion_EnvioEResponseBody(bool Gestion_EnvioEResult) {
+            this.Gestion_EnvioEResult = Gestion_EnvioEResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta1Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta1", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.Consulta1RequestBody Body;
+        
+        public Consulta1Request() {
+        }
+        
+        public Consulta1Request(Fase2.ServiceReference1.Consulta1RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Consulta1RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string tabla;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string columna;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string valor;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string get;
+        
+        public Consulta1RequestBody() {
+        }
+        
+        public Consulta1RequestBody(string tabla, string columna, string valor, string get) {
+            this.tabla = tabla;
+            this.columna = columna;
+            this.valor = valor;
+            this.get = get;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Consulta1Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta1Response", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.Consulta1ResponseBody Body;
+        
+        public Consulta1Response() {
+        }
+        
+        public Consulta1Response(Fase2.ServiceReference1.Consulta1ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Consulta1ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Consulta1Result;
+        
+        public Consulta1ResponseBody() {
+        }
+        
+        public Consulta1ResponseBody(string Consulta1Result) {
+            this.Consulta1Result = Consulta1Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LoginRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Login", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.LoginRequestBody Body;
+        
+        public LoginRequest() {
+        }
+        
+        public LoginRequest(Fase2.ServiceReference1.LoginRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class LoginRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Rol;
+        
+        public LoginRequestBody() {
+        }
+        
+        public LoginRequestBody(string usuario, string contraseña, string Rol) {
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+            this.Rol = Rol;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LoginResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LoginResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.LoginResponseBody Body;
+        
+        public LoginResponse() {
+        }
+        
+        public LoginResponse(Fase2.ServiceReference1.LoginResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class LoginResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool LoginResult;
+        
+        public LoginResponseBody() {
+        }
+        
+        public LoginResponseBody(bool LoginResult) {
+            this.LoginResult = LoginResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Update", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.UpdateRequestBody Body;
+        
+        public UpdateRequest() {
+        }
+        
+        public UpdateRequest(Fase2.ServiceReference1.UpdateRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string tabla;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string columna;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string valor;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string restriccion1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string restriccion2;
+        
+        public UpdateRequestBody() {
+        }
+        
+        public UpdateRequestBody(string tabla, string columna, string valor, string restriccion1, string restriccion2) {
+            this.tabla = tabla;
+            this.columna = columna;
+            this.valor = valor;
+            this.restriccion1 = restriccion1;
+            this.restriccion2 = restriccion2;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.UpdateResponseBody Body;
+        
+        public UpdateResponse() {
+        }
+        
+        public UpdateResponse(Fase2.ServiceReference1.UpdateResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool UpdateResult;
+        
+        public UpdateResponseBody() {
+        }
+        
+        public UpdateResponseBody(bool UpdateResult) {
+            this.UpdateResult = UpdateResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IngresarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Ingresar", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.IngresarRequestBody Body;
+        
+        public IngresarRequest() {
+        }
+        
+        public IngresarRequest(Fase2.ServiceReference1.IngresarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IngresarRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Tabla;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string columnas;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string valores;
+        
+        public IngresarRequestBody() {
+        }
+        
+        public IngresarRequestBody(string Tabla, string columnas, string valores) {
+            this.Tabla = Tabla;
+            this.columnas = columnas;
+            this.valores = valores;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IngresarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresarResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.IngresarResponseBody Body;
+        
+        public IngresarResponse() {
+        }
+        
+        public IngresarResponse(Fase2.ServiceReference1.IngresarResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IngresarResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool IngresarResult;
+        
+        public IngresarResponseBody() {
+        }
+        
+        public IngresarResponseBody(bool IngresarResult) {
+            this.IngresarResult = IngresarResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.HelloWorldRequestBody Body;
+        
+        public HelloWorldRequest() {
+        }
+        
+        public HelloWorldRequest(Fase2.ServiceReference1.HelloWorldRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class HelloWorldRequestBody {
+        
+        public HelloWorldRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.HelloWorldResponseBody Body;
+        
+        public HelloWorldResponse() {
+        }
+        
+        public HelloWorldResponse(Fase2.ServiceReference1.HelloWorldResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class HelloWorldResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string HelloWorldResult;
+        
+        public HelloWorldResponseBody() {
+        }
+        
+        public HelloWorldResponseBody(string HelloWorldResult) {
+            this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsultaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.ConsultaRequestBody Body;
+        
+        public ConsultaRequest() {
+        }
+        
+        public ConsultaRequest(Fase2.ServiceReference1.ConsultaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConsultaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string tablas;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string columnas;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string llaves;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string get;
+        
+        public ConsultaRequestBody() {
+        }
+        
+        public ConsultaRequestBody(string tablas, string columnas, string llaves, string get) {
+            this.tablas = tablas;
+            this.columnas = columnas;
+            this.llaves = llaves;
+            this.get = get;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsultaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsultaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.ConsultaResponseBody Body;
+        
+        public ConsultaResponse() {
+        }
+        
+        public ConsultaResponse(Fase2.ServiceReference1.ConsultaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConsultaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Fase2.ServiceReference1.ArrayOfAnyType ConsultaResult;
+        
+        public ConsultaResponseBody() {
+        }
+        
+        public ConsultaResponseBody(Fase2.ServiceReference1.ArrayOfAnyType ConsultaResult) {
+            this.ConsultaResult = ConsultaResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -101,44 +636,153 @@ namespace Fase2.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataTable datos(string valor) {
-            return base.Channel.datos(valor);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.Gestion_EnvioEResponse Fase2.ServiceReference1.WebService1Soap.Gestion_EnvioE(Fase2.ServiceReference1.Gestion_EnvioERequest request) {
+            return base.Channel.Gestion_EnvioE(request);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> datosAsync(string valor) {
-            return base.Channel.datosAsync(valor);
+        public bool Gestion_EnvioE(string fecha, string destino) {
+            Fase2.ServiceReference1.Gestion_EnvioERequest inValue = new Fase2.ServiceReference1.Gestion_EnvioERequest();
+            inValue.Body = new Fase2.ServiceReference1.Gestion_EnvioERequestBody();
+            inValue.Body.fecha = fecha;
+            inValue.Body.destino = destino;
+            Fase2.ServiceReference1.Gestion_EnvioEResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Gestion_EnvioE(inValue);
+            return retVal.Body.Gestion_EnvioEResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.Gestion_EnvioEResponse> Fase2.ServiceReference1.WebService1Soap.Gestion_EnvioEAsync(Fase2.ServiceReference1.Gestion_EnvioERequest request) {
+            return base.Channel.Gestion_EnvioEAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.Gestion_EnvioEResponse> Gestion_EnvioEAsync(string fecha, string destino) {
+            Fase2.ServiceReference1.Gestion_EnvioERequest inValue = new Fase2.ServiceReference1.Gestion_EnvioERequest();
+            inValue.Body = new Fase2.ServiceReference1.Gestion_EnvioERequestBody();
+            inValue.Body.fecha = fecha;
+            inValue.Body.destino = destino;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).Gestion_EnvioEAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.Consulta1Response Fase2.ServiceReference1.WebService1Soap.Consulta1(Fase2.ServiceReference1.Consulta1Request request) {
+            return base.Channel.Consulta1(request);
         }
         
         public string Consulta1(string tabla, string columna, string valor, string get) {
-            return base.Channel.Consulta1(tabla, columna, valor, get);
+            Fase2.ServiceReference1.Consulta1Request inValue = new Fase2.ServiceReference1.Consulta1Request();
+            inValue.Body = new Fase2.ServiceReference1.Consulta1RequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.columna = columna;
+            inValue.Body.valor = valor;
+            inValue.Body.get = get;
+            Fase2.ServiceReference1.Consulta1Response retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Consulta1(inValue);
+            return retVal.Body.Consulta1Result;
         }
         
-        public System.Threading.Tasks.Task<string> Consulta1Async(string tabla, string columna, string valor, string get) {
-            return base.Channel.Consulta1Async(tabla, columna, valor, get);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.Consulta1Response> Fase2.ServiceReference1.WebService1Soap.Consulta1Async(Fase2.ServiceReference1.Consulta1Request request) {
+            return base.Channel.Consulta1Async(request);
         }
         
-        public int Login(string usuario, string contraseña, string Rol) {
-            return base.Channel.Login(usuario, contraseña, Rol);
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.Consulta1Response> Consulta1Async(string tabla, string columna, string valor, string get) {
+            Fase2.ServiceReference1.Consulta1Request inValue = new Fase2.ServiceReference1.Consulta1Request();
+            inValue.Body = new Fase2.ServiceReference1.Consulta1RequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.columna = columna;
+            inValue.Body.valor = valor;
+            inValue.Body.get = get;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).Consulta1Async(inValue);
         }
         
-        public System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contraseña, string Rol) {
-            return base.Channel.LoginAsync(usuario, contraseña, Rol);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.LoginResponse Fase2.ServiceReference1.WebService1Soap.Login(Fase2.ServiceReference1.LoginRequest request) {
+            return base.Channel.Login(request);
+        }
+        
+        public bool Login(string usuario, string contraseña, string Rol) {
+            Fase2.ServiceReference1.LoginRequest inValue = new Fase2.ServiceReference1.LoginRequest();
+            inValue.Body = new Fase2.ServiceReference1.LoginRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            inValue.Body.Rol = Rol;
+            Fase2.ServiceReference1.LoginResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Login(inValue);
+            return retVal.Body.LoginResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.LoginResponse> Fase2.ServiceReference1.WebService1Soap.LoginAsync(Fase2.ServiceReference1.LoginRequest request) {
+            return base.Channel.LoginAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.LoginResponse> LoginAsync(string usuario, string contraseña, string Rol) {
+            Fase2.ServiceReference1.LoginRequest inValue = new Fase2.ServiceReference1.LoginRequest();
+            inValue.Body = new Fase2.ServiceReference1.LoginRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.contraseña = contraseña;
+            inValue.Body.Rol = Rol;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).LoginAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.UpdateResponse Fase2.ServiceReference1.WebService1Soap.Update(Fase2.ServiceReference1.UpdateRequest request) {
+            return base.Channel.Update(request);
         }
         
         public bool Update(string tabla, string columna, string valor, string restriccion1, string restriccion2) {
-            return base.Channel.Update(tabla, columna, valor, restriccion1, restriccion2);
+            Fase2.ServiceReference1.UpdateRequest inValue = new Fase2.ServiceReference1.UpdateRequest();
+            inValue.Body = new Fase2.ServiceReference1.UpdateRequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.columna = columna;
+            inValue.Body.valor = valor;
+            inValue.Body.restriccion1 = restriccion1;
+            inValue.Body.restriccion2 = restriccion2;
+            Fase2.ServiceReference1.UpdateResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Update(inValue);
+            return retVal.Body.UpdateResult;
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateAsync(string tabla, string columna, string valor, string restriccion1, string restriccion2) {
-            return base.Channel.UpdateAsync(tabla, columna, valor, restriccion1, restriccion2);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.UpdateResponse> Fase2.ServiceReference1.WebService1Soap.UpdateAsync(Fase2.ServiceReference1.UpdateRequest request) {
+            return base.Channel.UpdateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.UpdateResponse> UpdateAsync(string tabla, string columna, string valor, string restriccion1, string restriccion2) {
+            Fase2.ServiceReference1.UpdateRequest inValue = new Fase2.ServiceReference1.UpdateRequest();
+            inValue.Body = new Fase2.ServiceReference1.UpdateRequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.columna = columna;
+            inValue.Body.valor = valor;
+            inValue.Body.restriccion1 = restriccion1;
+            inValue.Body.restriccion2 = restriccion2;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).UpdateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.IngresarResponse Fase2.ServiceReference1.WebService1Soap.Ingresar(Fase2.ServiceReference1.IngresarRequest request) {
+            return base.Channel.Ingresar(request);
         }
         
         public bool Ingresar(string Tabla, string columnas, string valores) {
-            return base.Channel.Ingresar(Tabla, columnas, valores);
+            Fase2.ServiceReference1.IngresarRequest inValue = new Fase2.ServiceReference1.IngresarRequest();
+            inValue.Body = new Fase2.ServiceReference1.IngresarRequestBody();
+            inValue.Body.Tabla = Tabla;
+            inValue.Body.columnas = columnas;
+            inValue.Body.valores = valores;
+            Fase2.ServiceReference1.IngresarResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Ingresar(inValue);
+            return retVal.Body.IngresarResult;
         }
         
-        public System.Threading.Tasks.Task<bool> IngresarAsync(string Tabla, string columnas, string valores) {
-            return base.Channel.IngresarAsync(Tabla, columnas, valores);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.IngresarResponse> Fase2.ServiceReference1.WebService1Soap.IngresarAsync(Fase2.ServiceReference1.IngresarRequest request) {
+            return base.Channel.IngresarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.IngresarResponse> IngresarAsync(string Tabla, string columnas, string valores) {
+            Fase2.ServiceReference1.IngresarRequest inValue = new Fase2.ServiceReference1.IngresarRequest();
+            inValue.Body = new Fase2.ServiceReference1.IngresarRequestBody();
+            inValue.Body.Tabla = Tabla;
+            inValue.Body.columnas = columnas;
+            inValue.Body.valores = valores;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).IngresarAsync(inValue);
         }
         
         public bool conectarServidor() {
@@ -149,20 +793,58 @@ namespace Fase2.ServiceReference1 {
             return base.Channel.conectarServidorAsync();
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.HelloWorldResponse Fase2.ServiceReference1.WebService1Soap.HelloWorld(Fase2.ServiceReference1.HelloWorldRequest request) {
+            return base.Channel.HelloWorld(request);
+        }
+        
         public string HelloWorld() {
-            return base.Channel.HelloWorld();
+            Fase2.ServiceReference1.HelloWorldRequest inValue = new Fase2.ServiceReference1.HelloWorldRequest();
+            inValue.Body = new Fase2.ServiceReference1.HelloWorldRequestBody();
+            Fase2.ServiceReference1.HelloWorldResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).HelloWorld(inValue);
+            return retVal.Body.HelloWorldResult;
         }
         
-        public System.Threading.Tasks.Task<string> HelloWorldAsync() {
-            return base.Channel.HelloWorldAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.HelloWorldResponse> Fase2.ServiceReference1.WebService1Soap.HelloWorldAsync(Fase2.ServiceReference1.HelloWorldRequest request) {
+            return base.Channel.HelloWorldAsync(request);
         }
         
-        public object[] Consulta(string tablas, string columnas, string llaves, string get) {
-            return base.Channel.Consulta(tablas, columnas, llaves, get);
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
+            Fase2.ServiceReference1.HelloWorldRequest inValue = new Fase2.ServiceReference1.HelloWorldRequest();
+            inValue.Body = new Fase2.ServiceReference1.HelloWorldRequestBody();
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<object[]> ConsultaAsync(string tablas, string columnas, string llaves, string get) {
-            return base.Channel.ConsultaAsync(tablas, columnas, llaves, get);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.ConsultaResponse Fase2.ServiceReference1.WebService1Soap.Consulta(Fase2.ServiceReference1.ConsultaRequest request) {
+            return base.Channel.Consulta(request);
+        }
+        
+        public Fase2.ServiceReference1.ArrayOfAnyType Consulta(string tablas, string columnas, string llaves, string get) {
+            Fase2.ServiceReference1.ConsultaRequest inValue = new Fase2.ServiceReference1.ConsultaRequest();
+            inValue.Body = new Fase2.ServiceReference1.ConsultaRequestBody();
+            inValue.Body.tablas = tablas;
+            inValue.Body.columnas = columnas;
+            inValue.Body.llaves = llaves;
+            inValue.Body.get = get;
+            Fase2.ServiceReference1.ConsultaResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).Consulta(inValue);
+            return retVal.Body.ConsultaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.ConsultaResponse> Fase2.ServiceReference1.WebService1Soap.ConsultaAsync(Fase2.ServiceReference1.ConsultaRequest request) {
+            return base.Channel.ConsultaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.ConsultaResponse> ConsultaAsync(string tablas, string columnas, string llaves, string get) {
+            Fase2.ServiceReference1.ConsultaRequest inValue = new Fase2.ServiceReference1.ConsultaRequest();
+            inValue.Body = new Fase2.ServiceReference1.ConsultaRequestBody();
+            inValue.Body.tablas = tablas;
+            inValue.Body.columnas = columnas;
+            inValue.Body.llaves = llaves;
+            inValue.Body.get = get;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).ConsultaAsync(inValue);
         }
     }
 }
