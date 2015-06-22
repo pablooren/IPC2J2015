@@ -53,6 +53,27 @@ namespace Fase2
 
         }
         [WebMethod]
+        public bool DELETE(String tabla, String condicion) {
+            bool confirm = false;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = "DELETE FROM "+tabla+" WHERE "+condicion;
+            conectarServidor();
+            if (conectarServidor())
+            {
+                if (com.ExecuteNonQuery() != 0)
+                    confirm = true;
+                else
+                    confirm = false;
+
+            }
+            else
+            {
+                confirm = false;
+            }
+            return confirm;
+        }
+        [WebMethod]
         public string Consulta1(String tabla, String columna, String valor, String get) {
             String aux1 = "";
             SqlCommand com = new SqlCommand();

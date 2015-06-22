@@ -166,6 +166,7 @@
     <Content Include="Cotizacion.aspx" />
     <Content Include="Director.aspx" />
     <Content Include="Editar_cliente.aspx" />
+    <Content Include="EliminarEmpleado.aspx" />
     <Content Include="EstadoLote.aspx" />
     <Content Include="logeado.aspx" />
     <Content Include="Lote.aspx" />
@@ -403,6 +404,13 @@
     </Compile>
     <Compile Include="Editar_cliente.aspx.designer.cs">
       <DependentUpon>Editar_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarEmpleado.aspx.cs">
+      <DependentUpon>EliminarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarEmpleado.aspx.designer.cs">
+      <DependentUpon>EliminarEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados.master.cs">
       <DependentUpon>Empleados.master</DependentUpon>

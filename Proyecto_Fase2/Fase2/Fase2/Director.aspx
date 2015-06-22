@@ -23,7 +23,7 @@
 
 
 
-        <asp:HyperLink ID="HyperLink3" runat="server">Modificar contratacion</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="ModificarContrato.aspx">Modificar contratacion</asp:HyperLink>
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-        <asp:HyperLink ID="HyperLink4" runat="server">Despedir empleado</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="EliminarEmpleado.aspx">Despedir empleado</asp:HyperLink>
 
 
 
