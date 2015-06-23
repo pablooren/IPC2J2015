@@ -32,6 +32,13 @@ namespace Fase2.ServiceReference1 {
         System.Threading.Tasks.Task<Fase2.ServiceReference1.Gestion_EnvioEResponse> Gestion_EnvioEAsync(Fase2.ServiceReference1.Gestion_EnvioERequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/delete", ReplyAction="*")]
+        Fase2.ServiceReference1.deleteResponse delete(Fase2.ServiceReference1.deleteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/delete", ReplyAction="*")]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.deleteResponse> deleteAsync(Fase2.ServiceReference1.deleteRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta1", ReplyAction="*")]
         Fase2.ServiceReference1.Consulta1Response Consulta1(Fase2.ServiceReference1.Consulta1Request request);
         
@@ -149,6 +156,78 @@ namespace Fase2.ServiceReference1 {
         
         public Gestion_EnvioEResponseBody(bool Gestion_EnvioEResult) {
             this.Gestion_EnvioEResult = Gestion_EnvioEResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="delete", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.deleteRequestBody Body;
+        
+        public deleteRequest() {
+        }
+        
+        public deleteRequest(Fase2.ServiceReference1.deleteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string tabla;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string condicion;
+        
+        public deleteRequestBody() {
+        }
+        
+        public deleteRequestBody(string tabla, string condicion) {
+            this.tabla = tabla;
+            this.condicion = condicion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.deleteResponseBody Body;
+        
+        public deleteResponse() {
+        }
+        
+        public deleteResponse(Fase2.ServiceReference1.deleteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool deleteResult;
+        
+        public deleteResponseBody() {
+        }
+        
+        public deleteResponseBody(bool deleteResult) {
+            this.deleteResult = deleteResult;
         }
     }
     
@@ -661,6 +740,33 @@ namespace Fase2.ServiceReference1 {
             inValue.Body.fecha = fecha;
             inValue.Body.destino = destino;
             return ((Fase2.ServiceReference1.WebService1Soap)(this)).Gestion_EnvioEAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.deleteResponse Fase2.ServiceReference1.WebService1Soap.delete(Fase2.ServiceReference1.deleteRequest request) {
+            return base.Channel.delete(request);
+        }
+        
+        public bool delete(string tabla, string condicion) {
+            Fase2.ServiceReference1.deleteRequest inValue = new Fase2.ServiceReference1.deleteRequest();
+            inValue.Body = new Fase2.ServiceReference1.deleteRequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.condicion = condicion;
+            Fase2.ServiceReference1.deleteResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).delete(inValue);
+            return retVal.Body.deleteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.deleteResponse> Fase2.ServiceReference1.WebService1Soap.deleteAsync(Fase2.ServiceReference1.deleteRequest request) {
+            return base.Channel.deleteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.deleteResponse> deleteAsync(string tabla, string condicion) {
+            Fase2.ServiceReference1.deleteRequest inValue = new Fase2.ServiceReference1.deleteRequest();
+            inValue.Body = new Fase2.ServiceReference1.deleteRequestBody();
+            inValue.Body.tabla = tabla;
+            inValue.Body.condicion = condicion;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).deleteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

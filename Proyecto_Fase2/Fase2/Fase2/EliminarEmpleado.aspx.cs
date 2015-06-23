@@ -33,9 +33,13 @@ namespace Fase2
             else {
                 GridViewRow row = GridView1.SelectedRow;
 
-                if (referencia.DELETE("Empleado", "ID_Empleado = " + row.Cells[1].Text)) {
+                if (referencia.delete("Empleado", "ID_Empleado = " + row.Cells[1].Text))
+                {
                     MessageBox.Show("Empleado eliminado");
                     Response.Redirect("EliminarEmpleado.aspx");
+                }
+                else {
+                    MessageBox.Show("El empleado no fue eliminado");
                 }
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,6 +37,11 @@ namespace Fase2
                     if (referencia.Gestion_EnvioE(TextBox1.Text ,row.Cells[1].Text))
                     {
                         MessageBox.Show("Lote creado con exito");
+                        ArrayList arr1 = new ArrayList(referencia.Consulta("Paquete p,Historial h, Lote l","p.ID_paquete","p.ID_paquete = h.Paquete AND l.id_lote = p.Lote AND p.Lote IS NOT NULL AND l.fecha_salida = ","'"+TextBox1.Text+"'"));
+                        foreach (string pac in arr1) {
+                            referencia.Update("Historial", "Fecha_enviado", "'" + TextBox1.Text + "'","Fecha_enviado = 'Sin datos' AND Paquete ",pac);
+                        }
+
               //         referencia.Update("Historial","Fecha_Enviado","'"+TextBox1.Text+"'", "")
 
                         Response.Redirect("Lote.aspx");

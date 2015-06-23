@@ -1,0 +1,8 @@
+ID_EMPLEADO,APELLIDOS,NOMBRES,DPI,TELEFONOS,DOMICILIOS,SUELDO,SUCURSAL,DEPARTAMENTO,NOMBRE DE USUARIO,CONTRASEÑA
+1,Santiago,Jose,3232,2222,Guatemala,15000,Jalapa,Servicio_cliente,josejose,jose
+2,Orellana,Enio,3232,2222,Guatemala,12000,Jalapa,Bodega,eni,enio
+3,Orellana,Aldo,3232,2222,Guatemala,15000,Boston,Paqueteria,aldos,soda
+4,Santos,Jose,3232,2222,Guatemala,12000,San Jose,Servicio_cliente,sansan,sonson
+5,Lemus,Mario,3232,2222,Guatemala,10000,San Jose,Bodega,maritom,lele
+6,Santi,JoseMaria,3232,2222,Guatemala,15000,Jalapa,Servicio_cliente,asereje,jadeje
+

@@ -53,8 +53,8 @@ namespace Fase2
 
         }
         [WebMethod]
-        public bool DELETE(String tabla, String condicion) {
-            bool confirm = false;
+        public bool delete(String tabla, String condicion) {
+            bool confirm =   false;
             SqlCommand com = new SqlCommand();
             com.Connection = conexion;
             com.CommandText = "DELETE FROM "+tabla+" WHERE "+condicion;
@@ -202,8 +202,8 @@ namespace Fase2
        [WebMethod]
        public bool Ingresar(String Tabla, String columnas, String valores) {
            bool cumplido = true;
-           try
-        {
+       //    try
+       // {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
             cm.CommandText = "INSERT INTO " + Tabla + "( " + columnas + " ) VALUES ( " + valores + " );";
@@ -221,12 +221,12 @@ namespace Fase2
                 cumplido = false;
             }
 
-        }
-       catch (Exception e)
-       {
-           cumplido = false;
+     //   }
+      // catch (Exception e)
+      // {
+      //     cumplido = false;
             //MostrarError = "Erro: " + e.Message.ToString();
-       }
+     //  }
        
             conexion.Close();
        

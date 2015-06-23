@@ -15,7 +15,7 @@ namespace Fase2
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArrayList arr2 = new ArrayList(referencia.Consulta("Impuesto i", "i.Nombre,i.Porcentaje", "Porcentaje IS NOT NULL", " "));
+            ArrayList arr2 = new ArrayList(referencia.Consulta("Impuesto i", "i.Nombre,i.Porcentaje", "Porcentaje IS NOT NULL  AND i.Nombre <> 'Pesos' AND I.Nombre <> 'Comision'", " "));
             for (int b = 0; b < arr2.Count; b++)
             {
                 DropDownList1.Items.Add(arr2[b].ToString() + " %");
@@ -32,6 +32,8 @@ namespace Fase2
              {
                     int pes = Convert.ToInt32(TextBox1.Text);
                     int prec = Convert.ToInt32(TextBox2.Text);
+                    int comipeso = Convert.ToInt32(referencia.Consulta1("Impuesto i", "i.Porcentaje", "i.Nombre ", "'Pesos'"));
+                    int comiemp = Convert.ToInt32(referencia.Consulta1("Impuesto i", "i.Porcentaje", "i.Nombre ", "'Comision'"));
                     String[] aux3 = DropDownList1.SelectedItem.Text.Split(' ');
                     int imp = Convert.ToInt32(aux3[1]);
                     float total = ((pes * 5) + (prec * imp / 100)) * 5 / 100;

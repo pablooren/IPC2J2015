@@ -18,14 +18,24 @@
 
 
 
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+
+
+
+
+    </p>
+    <p>
+
+
+
+
         <asp:Label ID="Label2" runat="server" ForeColor="White" Text="Casilla Internacional de usuario"></asp:Label>
 &nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList1" runat="server" Height="18px" Width="214px">
             <asp:ListItem>-</asp:ListItem>
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Carga Masiva" />
-
+        
 
 
 

@@ -7,7 +7,7 @@
 
 
 
-        <asp:HyperLink ID="HyperLink1" runat="server">Registrar Paquete</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="RegistroPaquete.aspx">Registrar Paquete</asp:HyperLink>
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-        <asp:HyperLink ID="HyperLink2" runat="server">Registrar lote</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Lote.aspx">Registrar lote</asp:HyperLink>
 
 
 
@@ -25,7 +25,7 @@
 
 
 
-        <asp:HyperLink ID="HyperLink3" runat="server">Estado de lote</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="EstadoLote.aspx">Estado de lote</asp:HyperLink>
 
 
 

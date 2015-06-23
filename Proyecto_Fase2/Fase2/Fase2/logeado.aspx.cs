@@ -56,7 +56,7 @@ namespace Fase2
              if (aux45 == "Servicio_cliente") {
                  Response.Redirect("Servicio al cliente.aspx");
              }
-             else if (aux45 == "Bodega") { Response.Redirect("Bodega"); }
+             else if (aux45 == "Bodega") { Response.Redirect("Bodega.aspx"); }
              else if (aux45 == "Paqueteria") { Response.Redirect("Paqueteria.aspx"); } else { MessageBox.Show("Hubo un error porfavor verifica"); }
 
                 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,7 +21,7 @@ namespace Fase2
                 DropDownList1.Items.Add(arr[a].ToString() );
             }
             arr.Clear();
-            ArrayList arr2 = new ArrayList(referencia.Consulta("Impuesto i", "i.Nombre,i.Porcentaje", "Porcentaje IS NOT NULL", " "));
+            ArrayList arr2 = new ArrayList(referencia.Consulta("Impuesto i", "i.Nombre,i.Porcentaje", "Porcentaje IS NOT NULL AND i.Nombre <> 'Pesos' AND I.Nombre <> 'Comision' ", " "));
             for (int b = 0; b < arr2.Count; b++) {
                 DropDownList2.Items.Add(arr2[b].ToString()+"%");
 
@@ -39,32 +40,67 @@ namespace Fase2
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedItem.Text == "-" || DropDownList2.SelectedItem.Text == "-" || TextBox1.Text == "" || TextBox2.Text == "")
+
+            bool fileok = false;
+            String savePath = @"";
+            if (FileUpload1.HasFile)
             {
-                MessageBox.Show("Porfavor, seleccione todos los campos");
-
-            }
-            else {
-                String[] aux2 = DropDownList1.SelectedItem.Text.Split(' ');
-                
-                String aux1 = referencia.Consulta1("Cliente c", "DPI", "Cas_Int", aux2[0]);
-                String[] aux3 = DropDownList2.SelectedItem.Text.Split(' ');
-                String[] aux7 = DropDownList3.SelectedItem.Text.Split(' ');
-            
-               String aux4 = referencia.Consulta1("Impuesto i", "i.Serie_imp", "i.Nombre ", "'" + aux3[0] + "'");
-              
-                if (referencia.Ingresar("Paquete", " Cliente,Categoria,Peso_lb,Precio,Estado,Destino ", aux1+","+aux4+","+TextBox1.Text+","+TextBox2.Text+",'Registrado',"+aux7[0]))
+                String fileextension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+                if (fileextension == ".csv")
                 {
-                       MessageBox.Show("Paquete ingresado con exito");
-
-                  //  Response.Redirect("RegistroPaquete.aspx");
+                    fileok = true;
+                    savePath = @"C:\Users\Public\";
+                    String fileName = FileUpload1.FileName;
+                    savePath += fileName;
+                    if (File.Exists(savePath))
+                    {
+                        File.Delete(savePath);
+                    }
+                    FileUpload1.SaveAs(savePath);
                 }
-                else {
-                    MessageBox.Show("Hay un error, porfavor verifica los campos");
+                else
+                {
+                    MessageBox.Show("La extension del archivo es incorrecta");
                 }
-            
+                if (fileok)
+                {
+                    Carga_masiva car = new Carga_masiva();
+                    car.Registros(savePath);
+                }
             }
+            else
+            {
 
+
+
+                if (DropDownList1.SelectedItem.Text == "-" || DropDownList2.SelectedItem.Text == "-" || TextBox1.Text == "" || TextBox2.Text == "")
+                {
+                    MessageBox.Show("Porfavor, seleccione todos los campos");
+
+                }
+                else
+                {
+                    String[] aux2 = DropDownList1.SelectedItem.Text.Split(' ');
+
+                    String aux1 = referencia.Consulta1("Cliente c", "DPI", "Cas_Int", aux2[0]);
+                    String[] aux3 = DropDownList2.SelectedItem.Text.Split(' ');
+                    String[] aux7 = DropDownList3.SelectedItem.Text.Split(' ');
+
+                    String aux4 = referencia.Consulta1("Impuesto i", "i.Serie_imp", "i.Nombre ", "'" + aux3[0] + "'");
+
+                    if (referencia.Ingresar("Paquete", " Cliente,Categoria,Peso_lb,Precio,Estado,Destino ", aux1 + "," + aux4 + "," + TextBox1.Text + "," + TextBox2.Text + ",'Registrado'," + aux7[0]))
+                    {
+                        MessageBox.Show("Paquete ingresado con exito");
+
+                        //  Response.Redirect("RegistroPaquete.aspx");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hay un error, porfavor verifica los campos");
+                    }
+
+                }
+            }
 
         }
     }

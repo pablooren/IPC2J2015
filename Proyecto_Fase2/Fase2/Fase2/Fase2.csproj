@@ -158,6 +158,8 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Administrador.aspx" />
+    <Content Include="AdminMasiva.aspx" />
+    <Content Include="Bodega.aspx" />
     <Content Include="Clientes.aspx" />
     <Content Include="Confirmacion_usuario.aspx" />
     <Content Include="Consulta_empleados.aspx" />
@@ -168,9 +170,11 @@
     <Content Include="Editar_cliente.aspx" />
     <Content Include="EliminarEmpleado.aspx" />
     <Content Include="EstadoLote.aspx" />
+    <Content Include="GestionCobros.aspx" />
     <Content Include="logeado.aspx" />
     <Content Include="Lote.aspx" />
     <Content Include="ModificarContrato.aspx" />
+    <Content Include="Ncobro.aspx" />
     <Content Include="Paqueteria.aspx" />
     <Content Include="RegistroPaquete.aspx" />
     <Content Include="registro_usuario.aspx" />
@@ -211,6 +215,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="ClienteM.master" />
+    <Content Include="Service References\ServiceReference1\Fase2.ServiceReference1.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceReference1\WebService1.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
@@ -340,7 +347,21 @@
     <Compile Include="Administrador.aspx.designer.cs">
       <DependentUpon>Administrador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminMasiva.aspx.cs">
+      <DependentUpon>AdminMasiva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMasiva.aspx.designer.cs">
+      <DependentUpon>AdminMasiva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Bodega.aspx.cs">
+      <DependentUpon>Bodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodega.aspx.designer.cs">
+      <DependentUpon>Bodega.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carga_masiva.cs" />
     <Compile Include="ClienteM.master.cs">
       <DependentUpon>ClienteM.master</DependentUpon>
@@ -429,6 +450,13 @@
     <Compile Include="EstadoLote.aspx.designer.cs">
       <DependentUpon>EstadoLote.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionCobros.aspx.cs">
+      <DependentUpon>GestionCobros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionCobros.aspx.designer.cs">
+      <DependentUpon>GestionCobros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="logeado.aspx.cs">
       <DependentUpon>logeado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,6 +477,13 @@
     </Compile>
     <Compile Include="ModificarContrato.aspx.designer.cs">
       <DependentUpon>ModificarContrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ncobro.aspx.cs">
+      <DependentUpon>Ncobro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ncobro.aspx.designer.cs">
+      <DependentUpon>Ncobro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paqueteria.aspx.cs">
       <DependentUpon>Paqueteria.aspx</DependentUpon>
