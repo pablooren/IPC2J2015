@@ -33,6 +33,7 @@ namespace Fase2
                 {
                     MessageBox.Show("muy bien");
                     ArrayList arr1 = new ArrayList(referencia.Consulta("Paquete p,Historial h, Lote l", "p.ID_paquete", "p.ID_paquete = h.Paquete AND l.id_lote = p.Lote AND p.Lote IS NOT NULL AND l.id_lote = ",  row.Cells[1].Text));
+                   
                     foreach (string pac in arr1)
                     {
                         referencia.Update("Historial", "Fecha_Stock", "'" + TextBox1.Text + "'", "Fecha_enviado = 'Sin datos' AND Paquete ", pac);

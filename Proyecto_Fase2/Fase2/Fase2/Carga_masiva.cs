@@ -11,8 +11,9 @@ namespace Fase2
     public class Carga_masiva
     {
         private ServiceReference1.WebService1SoapClient referencia = new ServiceReference1.WebService1SoapClient();
-        public void bodega(String path, String suc) { 
-         StreamReader reader = new StreamReader(path);
+        public void bodega(String path, String suc)
+        {
+            StreamReader reader = new StreamReader(path);
             String linea;
             ArrayList lotes = new ArrayList();
             linea = reader.ReadLine();
@@ -29,9 +30,38 @@ namespace Fase2
             foreach (string lote in lotes)
             {
                 String[] datos = lote.Split(',');
+                String aux1 = referencia.Consulta1("Lote", "id_lote", "id_lote", datos[0]);
+                if (datos[0] == aux1)
+                {
+                    MessageBox.Show("el lote si existe");
+
+                    //   String aux2 = referencia.Consulta1("Lote", "destino", "id_lote", datos[0]);
+//if (aux2 == suc)
+  //                  {
+                        // el lote si va  a la sucursal
+                        String aux3 = referencia.Consulta1("Lote", "estado", "id_lote", datos[0]);
+                        //   if (aux3 == "En stock") {
+                        MessageBox.Show("el lote si esta en stock");
+                        String aux4 = referencia.Consulta1("Cliente", "DPI", "Cas_Int", datos[2]);
+                        //         if (aux4 != "") {
+                        //          MessageBox.Show("el cliente existe");
+                        //     String aux5 = referencia.Consulta1("Paquete p", "p.ID_paquete", "p.Cliente =" + aux4 + "	AND p.Estado","'En stock'");
+                        //    if (aux5 == "") {
+                        MessageBox.Show("oh no el paquete esta perdido");
+                        referencia.Ingresar("Paquete", "Cliente,Categoria,Peso_lb,Precio,Estado,Destino", aux4 + ",2," + datos[3] + "," + datos[4] + ",'Perdido'," + datos[5]);
+
+                        //       }
+
+                        //        }
+                        //}
+                        //                    }
+
+
+//                    }
+
+                }
 
             }
-
         }
         public void Registros(String path) {
             StreamReader reader = new StreamReader(path);
