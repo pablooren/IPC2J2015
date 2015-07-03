@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Fase2
 {
-    public partial class Consulta_paquete : System.Web.UI.Page
+    public partial class Pendientes : System.Web.UI.Page
     {
         private ServiceReference1.WebService1SoapClient referencia = new ServiceReference1.WebService1SoapClient();
         logeado log = new logeado();
@@ -29,10 +29,10 @@ namespace Fase2
             }
             else {
                 GridViewRow row = GridView1.SelectedRow;
-                ArrayList arr3 = new ArrayList(referencia.Consulta("Paquete p, Historial h", "p.ID_paquete,p.Categoria,p.Peso_lb,p.Precio,h.Fecha_Enviado,h.Fecha_Recibido,h.Fecha_Stock", "p.ID_paquete = h.Paquete AND p.ID_paquete ="+row.Cells[1].Text," "));
+                ArrayList arr3 = new ArrayList(referencia.Consulta("Paquete p, Historial h", "p.ID_paquete,p.Categoria,p.Peso_lb,p.Precio,h.Fecha_Enviado,h.Fecha_Recibido,h.Fecha_Stock,h.Fecha_Facturado", "p.ID_paquete = h.Paquete AND p.ID_paquete ="+row.Cells[1].Text," "));
                 for (int b = 0; b < arr3.Count; b++)
                 {
-                    MessageBox.Show("ID_paquete     Categoria     Peso_lb     Precio     Fecha_Enviado     Fecha_Recibido    Fecha_Stock   \n"+arr3[0]);
+                    MessageBox.Show("ID_paquete     Categoria     Peso_lb     Precio     Fecha_Enviado     Fecha_Recibido    Fecha_Stock   Fecha_Facturado   \n"+arr3[0]);
 
                 }
             }

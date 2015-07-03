@@ -65,6 +65,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetImages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idpaquete" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImagesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Update">
         <s:complexType>
           <s:sequence>
@@ -167,6 +181,12 @@
   <wsdl:message name="LoginSoapOut">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="GetImagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImages" />
+  </wsdl:message>
+  <wsdl:message name="GetImagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImagesResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateSoapIn">
     <wsdl:part name="parameters" element="tns:Update" />
   </wsdl:message>
@@ -213,6 +233,10 @@
     <wsdl:operation name="Login">
       <wsdl:input message="tns:LoginSoapIn" />
       <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <wsdl:input message="tns:GetImagesSoapIn" />
+      <wsdl:output message="tns:GetImagesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Update">
       <wsdl:input message="tns:UpdateSoapIn" />
@@ -266,6 +290,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <soap:operation soapAction="http://tempuri.org/GetImages" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -350,6 +383,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <soap12:operation soapAction="http://tempuri.org/GetImages" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

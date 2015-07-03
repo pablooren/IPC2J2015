@@ -10,7 +10,7 @@
 namespace Fase2 {
     
     
-    public partial class Consulta_paquete {
+    public partial class Pendientes {
         
         /// <summary>
         /// Control Label1.

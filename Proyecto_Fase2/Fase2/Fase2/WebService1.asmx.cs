@@ -164,6 +164,17 @@ namespace Fase2
     }
             return carga;
         }
+        [WebMethod]
+        public byte[] GetImages(String idpaquete) {
+            byte[] ret;
+           // cm.Connection = conexion;
+            conectarServidor();
+            SqlCommand cm = new SqlCommand("SELECT Imagen FROM Paquete WHERE ID_paquete ="+idpaquete,conexion);
+             ret = (byte[])cm.ExecuteScalar();
+              
+            return ret;
+
+        }
        [WebMethod]
        public bool Update(String tabla, String columna, String valor, String restriccion1, String restriccion2)
        {

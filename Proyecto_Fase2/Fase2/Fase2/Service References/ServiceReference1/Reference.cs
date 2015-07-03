@@ -52,6 +52,13 @@ namespace Fase2.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
         System.Threading.Tasks.Task<Fase2.ServiceReference1.LoginResponse> LoginAsync(Fase2.ServiceReference1.LoginRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idpaquete del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetImages", ReplyAction="*")]
+        Fase2.ServiceReference1.GetImagesResponse GetImages(Fase2.ServiceReference1.GetImagesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetImages", ReplyAction="*")]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.GetImagesResponse> GetImagesAsync(Fase2.ServiceReference1.GetImagesRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tabla del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
         Fase2.ServiceReference1.UpdateResponse Update(Fase2.ServiceReference1.UpdateRequest request);
@@ -384,6 +391,74 @@ namespace Fase2.ServiceReference1 {
         
         public LoginResponseBody(bool LoginResult) {
             this.LoginResult = LoginResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetImagesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetImages", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.GetImagesRequestBody Body;
+        
+        public GetImagesRequest() {
+        }
+        
+        public GetImagesRequest(Fase2.ServiceReference1.GetImagesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetImagesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string idpaquete;
+        
+        public GetImagesRequestBody() {
+        }
+        
+        public GetImagesRequestBody(string idpaquete) {
+            this.idpaquete = idpaquete;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetImagesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetImagesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Fase2.ServiceReference1.GetImagesResponseBody Body;
+        
+        public GetImagesResponse() {
+        }
+        
+        public GetImagesResponse(Fase2.ServiceReference1.GetImagesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetImagesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public byte[] GetImagesResult;
+        
+        public GetImagesResponseBody() {
+        }
+        
+        public GetImagesResponseBody(byte[] GetImagesResult) {
+            this.GetImagesResult = GetImagesResult;
         }
     }
     
@@ -827,6 +902,31 @@ namespace Fase2.ServiceReference1 {
             inValue.Body.contraseña = contraseña;
             inValue.Body.Rol = Rol;
             return ((Fase2.ServiceReference1.WebService1Soap)(this)).LoginAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Fase2.ServiceReference1.GetImagesResponse Fase2.ServiceReference1.WebService1Soap.GetImages(Fase2.ServiceReference1.GetImagesRequest request) {
+            return base.Channel.GetImages(request);
+        }
+        
+        public byte[] GetImages(string idpaquete) {
+            Fase2.ServiceReference1.GetImagesRequest inValue = new Fase2.ServiceReference1.GetImagesRequest();
+            inValue.Body = new Fase2.ServiceReference1.GetImagesRequestBody();
+            inValue.Body.idpaquete = idpaquete;
+            Fase2.ServiceReference1.GetImagesResponse retVal = ((Fase2.ServiceReference1.WebService1Soap)(this)).GetImages(inValue);
+            return retVal.Body.GetImagesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Fase2.ServiceReference1.GetImagesResponse> Fase2.ServiceReference1.WebService1Soap.GetImagesAsync(Fase2.ServiceReference1.GetImagesRequest request) {
+            return base.Channel.GetImagesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Fase2.ServiceReference1.GetImagesResponse> GetImagesAsync(string idpaquete) {
+            Fase2.ServiceReference1.GetImagesRequest inValue = new Fase2.ServiceReference1.GetImagesRequest();
+            inValue.Body = new Fase2.ServiceReference1.GetImagesRequestBody();
+            inValue.Body.idpaquete = idpaquete;
+            return ((Fase2.ServiceReference1.WebService1Soap)(this)).GetImagesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
