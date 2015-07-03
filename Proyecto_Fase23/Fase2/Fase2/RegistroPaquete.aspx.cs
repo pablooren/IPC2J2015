@@ -7,12 +7,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.IO;
 
 namespace Fase2
 {
     public partial class RegistroPaquete : System.Web.UI.Page
     {
         private ServiceReference1.WebService1SoapClient referencia = new ServiceReference1.WebService1SoapClient();
+       
+
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,7 +50,7 @@ namespace Fase2
             if (FileUpload1.HasFile)
             {
                 String fileextension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
-                if (fileextension == ".csv")
+                if (fileextension == ".csv" || fileextension == ".jpg" || fileextension == ".png")
                 {
                     fileok = true;
                     savePath = @"C:\Users\Public\";
@@ -64,8 +68,50 @@ namespace Fase2
                 }
                 if (fileok)
                 {
-                    Carga_masiva car = new Carga_masiva();
-                    car.Registros(savePath);
+                    if (fileextension == ".csv")
+                    {
+                        Carga_masiva car = new Carga_masiva();
+                        car.Registros(savePath);
+                    }
+                    else if (fileextension == ".jpg" || fileextension == ".png") {
+                        if (DropDownList1.SelectedItem.Text == "-" || DropDownList2.SelectedItem.Text == "-" || TextBox1.Text == "" || TextBox2.Text == "")
+                        {
+                            MessageBox.Show("Porfavor, seleccione todos los campos");
+
+                        }
+                        else
+                        {
+                            String[] aux2 = DropDownList1.SelectedItem.Text.Split(' ');
+
+                            String aux1 = referencia.Consulta1("Cliente c", "DPI", "Cas_Int", aux2[0]);
+                            String[] aux3 = DropDownList2.SelectedItem.Text.Split(' ');
+                            String[] aux7 = DropDownList3.SelectedItem.Text.Split(' ');
+
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                            System.Drawing.Image img = System.Drawing.Image.FromFile(savePath);
+                            img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+
+
+
+                            String aux4 = referencia.Consulta1("Impuesto i", "i.Serie_imp", "i.Nombre ", "'" + aux3[0] + "'");
+
+                            if (referencia.Ingresar("Paquete", " Cliente,Categoria,Peso_lb,Precio,Estado,Destino,Imagen ", aux1 + "," + aux4 + "," + TextBox1.Text + "," + "0000" + ",'Pendiente'," + aux7[0] + ",(SELECT * FROM OPENROWSET(BULK N'" + savePath + "', SINGLE_BLOB) AS CategoryImage)"))
+                            {
+                                MessageBox.Show("Paquete ingresado con exito");
+
+                                //  Response.Redirect("RegistroPaquete.aspx");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hay un error, porfavor verifica los campos");
+                            }
+
+                        }
+                    
+                    
+                    
+                    }
                 }
             }
             else
@@ -101,6 +147,42 @@ namespace Fase2
 
                 }
             }
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            bool fileok = false;
+            String savePath = @"";
+            if (FileUpload1.HasFile)
+            {
+                String fileextension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+                if (fileextension == ".jpg")
+                {
+                    fileok = true;
+                    savePath = @"C:\Users\Public\";
+                    String fileName = FileUpload1.FileName;
+                    savePath += fileName;
+                    if (File.Exists(savePath))
+                    {
+                        File.Delete(savePath);
+                    }
+                    FileUpload1.SaveAs(savePath);
+                }
+                else
+                {
+                    MessageBox.Show("La extension del archivo es incorrecta");
+                }
+                if (fileok)
+                {
+                    Image1.ImageUrl = savePath;
+                    Image1.Visible = true;
+
+
+                }
+            }
+            
+
 
         }
     }

@@ -9,6 +9,13 @@
 
 
     </p>
+    <p>
+
+
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Pendientes.aspx">Paquetes pendientes</asp:HyperLink>
+
+
+    </p>
 <p>
 
 

@@ -176,8 +176,6 @@
     <Content Include="ModificarContrato.aspx" />
     <Content Include="Ncobro.aspx" />
     <Content Include="Paqueteria.aspx" />
-    <Content Include="Pendientes.aspx" />
-    <Content Include="PreCarga.aspx" />
     <Content Include="RegistroPaquete.aspx" />
     <Content Include="registro_usuario.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -493,20 +491,6 @@
     </Compile>
     <Compile Include="Paqueteria.aspx.designer.cs">
       <DependentUpon>Paqueteria.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pendientes.aspx.cs">
-      <DependentUpon>Pendientes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pendientes.aspx.designer.cs">
-      <DependentUpon>Pendientes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PreCarga.aspx.cs">
-      <DependentUpon>PreCarga.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PreCarga.aspx.designer.cs">
-      <DependentUpon>PreCarga.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistroPaquete.aspx.cs">
       <DependentUpon>RegistroPaquete.aspx</DependentUpon>

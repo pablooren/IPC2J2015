@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/ClienteM.master" CodeBehind="Consulta_paquete.aspx.cs" Inherits="Fase2.Consulta_paquete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/ClienteM.master" CodeBehind="Consulta_paquete.aspx.cs" Inherits="Fase2.Pendientes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent"  runat="server" ClientIDMode="AutoID">
   
