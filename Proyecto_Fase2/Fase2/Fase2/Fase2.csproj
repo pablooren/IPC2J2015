@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -176,6 +182,8 @@
     <Content Include="ModificarContrato.aspx" />
     <Content Include="Ncobro.aspx" />
     <Content Include="Paqueteria.aspx" />
+    <Content Include="Pendientes.aspx" />
+    <Content Include="Precarga.aspx" />
     <Content Include="RegistroPaquete.aspx" />
     <Content Include="registro_usuario.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -412,6 +420,12 @@
     <Compile Include="Cotizacion.aspx.designer.cs">
       <DependentUpon>Cotizacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Director.aspx.cs">
       <DependentUpon>Director.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -450,6 +464,7 @@
     <Compile Include="EstadoLote.aspx.designer.cs">
       <DependentUpon>EstadoLote.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Facturas.cs" />
     <Compile Include="GestionCobros.aspx.cs">
       <DependentUpon>GestionCobros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -491,6 +506,20 @@
     </Compile>
     <Compile Include="Paqueteria.aspx.designer.cs">
       <DependentUpon>Paqueteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pendientes.aspx.cs">
+      <DependentUpon>Pendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pendientes.aspx.designer.cs">
+      <DependentUpon>Pendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Precarga.aspx.cs">
+      <DependentUpon>Precarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Precarga.aspx.designer.cs">
+      <DependentUpon>Precarga.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistroPaquete.aspx.cs">
       <DependentUpon>RegistroPaquete.aspx</DependentUpon>
@@ -552,6 +581,18 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Sucursal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sucursal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="top.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>top.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -572,6 +613,23 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sucursal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="top.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>top.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -10,7 +10,7 @@
 namespace Fase2 {
     
     
-    public partial class PreCarga {
+    public partial class Precarga {
         
         /// <summary>
         /// Control Label1.

@@ -26,7 +26,7 @@
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="ID_paquete" HeaderText="ID_paquete" InsertVisible="False" ReadOnly="True" SortExpression="ID_paquete" />
-                <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                 <asp:BoundField DataField="Peso_lb" HeaderText="Peso_lb" SortExpression="Peso_lb" />
                 <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                 <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />

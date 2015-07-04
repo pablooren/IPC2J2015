@@ -91,23 +91,12 @@
 
 
 
-        <asp:Label ID="Label7" runat="server" ForeColor="White" Text="Agregue imagen del precio"></asp:Label>
-&nbsp;<asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="..." Width="34px" />
-
-
-
-
-    </p>
+&nbsp;</p>
     <p>
 
 
 
 
-        <asp:Image ID="Image1" runat="server" Height="150px" Width="298px" />
-
-
-
-
-    </p>
+        &nbsp;</p>
 
 </asp:Content>
